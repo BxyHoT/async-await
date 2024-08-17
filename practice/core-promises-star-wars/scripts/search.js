@@ -12,6 +12,9 @@ const deleteButton = document.querySelector(".delete");
 const searchFild = document.querySelector(".input");
 const resultContainer = document.querySelector("#result-container");
 const spinner = document.querySelector(".spinner");
+const selectSearchParam = document.querySelector("select");
+const resultTitle = document.querySelector("p");
+const resultList = document.querySelector("#content");
 
 searchButton.addEventListener("click", getSearchResult);
 searchFild.addEventListener("keydown", (event) => {
@@ -25,12 +28,9 @@ function getSearchResult() {
 
   spinner.style.visibility = "visible";
 
-  const selectSearchParam = document.querySelector("select");
   const isCharacter = selectSearchParam.value === "characters";
   const isPlanet = selectSearchParam.value === "planets";
   const isSpecies = selectSearchParam.value === "species";
-  const resultTitle = document.querySelector("p");
-  const resultList = document.querySelector("#content");
 
   if (isCharacter) {
     searchCharactersResult(searchFild.value);
@@ -122,4 +122,6 @@ function getSearchResult() {
 
 function closeSearchResult() {
   resultContainer.style.visibility = "hidden";
+  resultTitle.innerHTML = "";
+  resultList.innerHTML = "";
 }
