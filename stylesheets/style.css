@@ -9,14 +9,15 @@ body * {
 }
 
 body {
-  background-color: #E2E3E5;
+  background-color: #e2e3e5;
   min-height: 100vh;
   max-height: 100vh;
   overflow-y: hidden;
   background-image: url(../images/at-st.jpg);
+  background-size: cover;
 }
 
-ul>li>ul>li {
+ul > li > ul > li {
   margin-left: 30px;
 }
 
